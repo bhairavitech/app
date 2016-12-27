@@ -1,0 +1,6 @@
+<% f=Forme::Form.new(:wrapper=>:td, :namespace=>'entry') %>
+<%== f.input(:select, :name=>'product[id]', :id=>'product_id', :options=>@products, :add_blank=>false) %>
+<%== f.input(:text, :key=>:qty, :size=>5, :autocomplete=>false) %>
+<%== f.input(:text, :key=>:rate, :size=>5, :autocomplete=>false) %>
+<%== f.input(:text, :key=>:total, :size=>5, :autocomplete=>false) %>
+<td><input type="submit" name="add" value="Add" /></td>

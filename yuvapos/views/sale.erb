@@ -1,0 +1,25 @@
+<h3>Retail Sale Bill</h3>
+<form id = "register_form" action="update/add_entry" method = "post">
+<%==csrf_tag%>
+<table id="register" class="table table-condensed">
+
+<thead> 
+<tr>
+	<th>Product</th>
+	<th>Rate</th>
+	<th>Qty</th>
+	<th>Total</th>
+	<th>Add</th>
+</tr>
+</thead>
+<tbody>
+<tr id="new_entry"><%== render("new_item_entry") %></tr>
+</tbody>
+</table>
+</form>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	setup_register_form();
+});
+</script>

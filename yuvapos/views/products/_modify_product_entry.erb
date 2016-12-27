@@ -1,0 +1,6 @@
+<%f=Forme::Form.new(:wrapper=>:td, :namespace=>'product')%>
+
+<%==f.input(:text, :key=>:name, value=>@product.name)%>
+<%==f.input(:text, :key=>:price, value=>@product.price)%>
+
+<td><input type="submit" name="update" value="update" /></td>

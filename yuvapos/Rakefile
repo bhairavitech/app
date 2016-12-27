@@ -1,0 +1,16 @@
+require "rake"
+
+task :app do
+  require "./yuvapos"
+end
+Dir[File.dirname(__FILE__) + "/lib/tasks/*.rb"].sort.each do |path|
+  require path
+end
+
+namespace :assets do
+  desc "Precompile the assets"
+  task :precompile do
+    require './'
+    Yuvapos.compile_assets
+  end
+end

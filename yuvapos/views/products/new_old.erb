@@ -1,0 +1,38 @@
+<h1>Create Product</h1>
+
+<script type="text/javascript">
+function validateNonEmpty(inputField, helpText) {
+  if(inputField.value.length==0) {
+    if(helpText!=null) {
+      helpText.innerHTML = "Please select a Product";
+      document.getElementById("product").product_name.focus();
+      //return false;
+    }
+
+  }
+  else {
+    helpText.innerHTML = "";
+    "Wow you have entered "+inputField.value;
+      return true;
+  }
+}
+
+</script>
+
+
+<form action="/products" method="post" role="form" id="product">
+  <%= csrf_tag %>
+  <div class="form-group">
+    <label class="control-label" for="product_name">Name</label>
+    <input class="form-control" id="product_name" name="product[name]" value="<%= @product.name%>" required="required" type="text" onblur="validateNonEmpty(this, document.getElementById('product_help'))"/>
+    <span id="product_help" class="help"></span>
+
+  </div>
+  <div class="form-group">
+    <label class="control-label label-before" for="product_price">Price</label>
+    <input class="form-control" id="product_price" name="product[price]" value="<%= @product.price %>" required="required" type="text"</>
+  </div>
+  <div class="form-group">
+    <input class="btn btn-success" type="submit" value="Create Product"/>
+  </div>
+</form>

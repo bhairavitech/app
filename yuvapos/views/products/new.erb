@@ -1,0 +1,38 @@
+<h1>Create Product</h1>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+  setup_product_form();
+});
+
+function validateNonEmpty(inputField, helpText) {
+  if(inputField.value.length==0) {
+    if(helpText!=null) {
+      helpText.innerHTML = "Please select a Product";
+      document.getElementById("product").product_name.focus();
+      //return false;
+    }
+
+  }
+  else {
+    helpText.innerHTML = "";
+    "Wow you have entered "+inputField.value;
+      return true;
+  }
+}
+
+</script>
+
+
+<form action="/products" method="post" role="form" id="product_form">
+  <%= csrf_tag %>
+  
+  <table class="table table-condensed">
+  <thead><tr><th>Product Name</th><th>Price</th><th>Edit</th></tr></thead>
+  <tbody>
+    <tr id="new_entry"><%==render("products/_#{@product ? 'blank':'new'}_product_entry")%></tr>
+
+  </tbody>
+  </table>
+</form>

@@ -1,0 +1,4 @@
+<td><%=@product.name%></td>
+<td><%=@product.price%></td>
+
+<td><a class="modify" id="modify_<%=@product.id%>" href="/product/modify_product_entry<%= "/#{@product.id}" if @product.id %>">Edit</a></td> 
